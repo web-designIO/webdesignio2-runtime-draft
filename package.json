@@ -1,0 +1,19 @@
+{
+  "name": "webdesignio",
+  "version": "1.0.0",
+  "description": "Platform to host multiple small business websites.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-dev server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dominik Burgdörfer <db@domachine.de>",
+  "license": "ISC",
+  "devDependencies": {
+    "node-dev": "^2.6.1"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "jade": "^1.9.2"
+  }
+}
