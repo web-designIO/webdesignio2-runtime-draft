@@ -1,8 +1,7 @@
-express = require('express');
+var express = require('express');
 
-controllers = require('./controllers/admin');
+var controllers = require('./controllers/admin');
 
-app = module.exports = express();
+var router = module.exports = express.Router();
 
-app.on('mount', function(parent) { app.set('views', parent.get('views')); });
-app.get('/websites', controllers.websites.index);
+router.get('/websites', controllers.websites.index);

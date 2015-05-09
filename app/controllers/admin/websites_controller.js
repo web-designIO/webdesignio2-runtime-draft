@@ -1,3 +1,3 @@
 exports.index = function(req, res) {
-  res.render('websites/index', { websites: {} });
+  res.render('admin/websites/index', { websites: {} });
 };
