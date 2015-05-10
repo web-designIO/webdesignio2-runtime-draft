@@ -8,10 +8,11 @@ app.set('views', `${__dirname}/views`);
 
 app.use(assets({
   paths: [
-    `${__dirname}/assets/js`,
-    `${__dirname}/assets/css`
+    `${__dirname}/assets/javascripts`,
+    `${__dirname}/assets/stylesheets`
   ],
   helperContext: app.locals
 }));
 app.use('/admin', require('./admin'));
 app.use(require('./website'));
+app.use(express.static('public'));

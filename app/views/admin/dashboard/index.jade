@@ -1,0 +1,41 @@
+extends ../base
+
+block styles
+  != css('admin/dashboard')
+
+block content
+  .content-wrapper
+    section.content-header
+      h1
+        | Dashboard
+        small Manage your Websites
+    .content.body
+
+      .row
+        .col-md-3.col-sm-6.col-xs-12
+          .info-box
+            span.info-box-icon.bg-aqua
+              i.ion.ion-monitor
+            .info-box-content
+              span.info-box-text Websites
+              span.info-box-number 90
+        .col-md-3.col-sm-6.col-xs-12
+          .info-box
+            span.info-box-icon.bg-red
+              i.fa.fa-users
+            .info-box-content
+              span.info-box-text Users
+              span.info-box-number 4
+
+      section#welcome
+        h2.page-header
+          a(href='#welcome') Welcome
+        p.lead
+          b web-design.io
+          |  is a open source platform for hosting websites.
+          | Currently it is only a hosting platform for websites that are based
+          | on the CSS framework Bootstrap 3.
+          | Get started with adding websites or check out our documentations.
+          | The Web-Developer-Documentation will guide you through creating a
+          | website and exploring the various components that are bundled with
+          | the web-design.io platform.
