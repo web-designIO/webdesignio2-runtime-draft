@@ -1,0 +1,48 @@
++form_for(user)
+  section.content-header
+    h1.pull-left
+      +title
+    .pull-right.btn-toolbar
+      a.btn.bg-orange.btn-flat.btn-sm(href='/users')
+        i.fa.fa-chevron-left
+        strong  BACK
+      button.btn.btn-success.btn-flat.btn-sm
+        i.fa.fa-save
+        strong  SAVE
+    .clearfix
+
+  section.content
+    .row
+      .col-md-6
+        .box
+          .box-header
+            h3.box-title New User
+          .box-body
+            if user.errors
+              .alert.alert-danger
+                ul
+                  each error in user.errors
+                    li #{error.message}
+
+            .form-group
+              label(for='name') Name
+              .input-group
+                span.input-group-addon
+                  i.fa.fa-user
+                input.form-control#name(type='text' placeholder='Name' name='user[name]' value=user.name)
+            .form-group
+              label(for='email') E-mail
+              .input-group
+                span.input-group-addon @
+                input.form-control#email(type='text' placeholder='E-mail' name='user[email]' value=user.email)
+            .form-group
+              .checkbox
+                label
+                  input.minimal-red(type='checkbox' name='user[isAdmin]' checked=user.isAdmin)
+                  |  Admin
+              .checkbox
+                label
+                  input.minimal-red(type='checkbox')
+                  | &nbsp;
+                  i.fa.fa-warning
+                  span(style='color:red;')  Reset (Resets all user-data and registration is needed again!)

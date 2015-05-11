@@ -1,3 +1,59 @@
-h5 Websites
-!= css('test')
-!= js('test')
+extends ../base
+
+block content
+  .content-wrapper
+    section.content-header
+      h1.pull-left
+        | Websites
+        small list
+      .pull-right
+        a.btn.btn-success.btn-flat.btn-sm(href='/websites/edit')
+          i.fa.fa-plus
+          strong  ADD WEBSITE
+      .clearfix
+
+    section.content
+      .row
+        .col-xs-12
+          .box
+            .box-header
+              h3.box-title Websites
+            .box-body
+              table#table1.table.table-bordered.table-hover
+                thead
+                  tr
+                    th Name
+                    th Domains
+                    th Actions
+                tbody
+                  - for(i=0; i<4; i++)
+                    tr
+                      td website-polaris
+                      td polaris.web-design.io
+                      td
+                        .btn-toolbar
+                          a.btn.btn-sm.btn-default.btn-flat(href='/websites/edit')
+                            i.fa.fa-edit
+                          button.btn.btn-sm.btn-danger.btn-flat
+                            i.fa.fa-trash-o
+                tfoot
+                  tr
+                    th Name
+                    th Domains
+                    th Actions
+
+block scripts
+  script(type='text/javascript').
+    $(function () {
+      $('#table1').dataTable({
+      "bPaginate": true,
+      "bLengthChange": false,
+      "bSort": true,
+      "bInfo": true,
+      "columns": [
+        { "orderable": true},
+        { "orderable": true},
+        { "orderable": false}
+      ]
+      });
+    });

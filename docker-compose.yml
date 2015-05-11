@@ -12,3 +12,10 @@ web:
   stdin_open: true
   environment:
     WDIO_HOSTNAME: machine.dev
+  links:
+    - mongo:mongo
+
+mongo:
+  image: mongo:2.7
+  volumes:
+    - ./data:/data/db

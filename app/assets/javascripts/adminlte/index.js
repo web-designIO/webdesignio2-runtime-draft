@@ -1,6 +1,9 @@
 //= require ./plugins/jQuery/jQuery-2.1.4.min
 //= require bootstrap
 //= require ./plugins/fastclick/fastclick.min
+//= require ./plugins/datatables/jquery.dataTables.min
+//= require ./plugins/datatables/dataTables.bootstrap.min
+//= require ./plugins/iCheck/icheck
 
 /*! AdminLTE app.js
  * ================

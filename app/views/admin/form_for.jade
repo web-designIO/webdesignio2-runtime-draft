@@ -1,0 +1,13 @@
+mixin form_for(collection, object)
+  if typeof collection !== 'string'
+    - object = collection
+    - collection = object.collection.name
+  - var url = req.baseUrl + '/' + collection
+  if !object.isNew
+    - url += ('/' + object._id + '?_method=PUT')
+  form&attributes(attributes)&attributes({
+    action: url,
+    method: 'POST'
+  })
+    input(type='hidden' name='_csrf' value=_csrf)
+    block
